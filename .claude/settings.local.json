@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"d:/WORKS/index.html\")",
+      "Bash(npx create-next-app:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(start \"\" \"http://localhost:3000\")"
+    ]
+  }
+}
