@@ -1,0 +1,5 @@
+﻿version: 1
+agent:
+  display_name: Product Dev Full Cycle
+  short_description: 6-stage workflow from idea to launch and iteration
+  default_prompt: Plan and execute product delivery through requirement, design, development, testing, deployment, and iteration with concrete outputs per stage.
