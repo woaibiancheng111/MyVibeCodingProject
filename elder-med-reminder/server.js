@@ -6,16 +6,33 @@ const crypto = require('crypto');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const DB_PATH = path.join(__dirname, 'data', 'db.json');
+const EMPTY_DB = {
+  medications: [],
+  appointments: [],
+  caregivers: [],
+  notifications: [],
+};
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 function readDb() {
-  return JSON.parse(fs.readFileSync(DB_PATH, 'utf-8'));
+  try {
+    const raw = fs.readFileSync(DB_PATH, 'utf-8').replace(/^\uFEFF/, '').trim();
+    if (!raw) return { ...EMPTY_DB };
+    const parsed = JSON.parse(raw);
+    return { ...EMPTY_DB, ...parsed };
+  } catch (err) {
+    console.error('Failed to parse db.json, reset to empty db:', err.message);
+    writeDb(EMPTY_DB);
+    return { ...EMPTY_DB };
+  }
 }
 
 function writeDb(db) {
-  fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2), 'utf-8');
+  const tmpPath = `${DB_PATH}.tmp`;
+  fs.writeFileSync(tmpPath, JSON.stringify(db, null, 2), 'utf-8');
+  fs.renameSync(tmpPath, DB_PATH);
 }
 
 function withId(payload) {

@@ -1,6 +1,22 @@
-﻿{
-  "medications": [],
+{
+  "medications": [
+    {
+      "id": "743ecb9b-ec28-48bd-80c0-b189d292002a",
+      "name": "shixi",
+      "dosage": "1",
+      "times": [
+        "9:00"
+      ]
+    }
+  ],
   "appointments": [],
-  "caregivers": [],
+  "caregivers": [
+    {
+      "id": "dca12f01-4e85-482c-99a8-d3d5e74ebd0b",
+      "name": "shixi",
+      "phone": "19011285812",
+      "relationship": "erzi"
+    }
+  ],
   "notifications": []
 }
