@@ -1,0 +1,15 @@
+﻿{
+  "name": "elder-med-reminder",
+  "version": "1.0.0",
+  "description": "长辈用药与复诊提醒助手 MVP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["silver-economy", "medication", "reminder", "elder-care"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

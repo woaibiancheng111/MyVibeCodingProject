@@ -1,0 +1,67 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>长辈用药与复诊提醒助手</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>长辈用药与复诊提醒助手</h1>
+    <p>大字体、简操作、可语音提醒</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>今日概览</h2>
+      <div id="stats" class="stats"></div>
+      <ul id="upcoming"></ul>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>新增用药计划</h2>
+        <form id="medForm">
+          <input name="name" placeholder="药名" required />
+          <input name="dosage" placeholder="剂量（如 1 片）" required />
+          <input name="times" placeholder="时间（如 08:00,20:00）" required />
+          <button type="submit">保存用药</button>
+        </form>
+        <ul id="medList"></ul>
+      </div>
+
+      <div class="card">
+        <h2>新增复诊计划</h2>
+        <form id="apptForm">
+          <input name="title" placeholder="复诊事项" required />
+          <input name="date" type="date" required />
+          <input name="time" type="time" required />
+          <input name="hospital" placeholder="医院/科室" />
+          <button type="submit">保存复诊</button>
+        </form>
+        <ul id="apptList"></ul>
+      </div>
+
+      <div class="card">
+        <h2>家属联系人</h2>
+        <form id="careForm">
+          <input name="name" placeholder="姓名" required />
+          <input name="phone" placeholder="手机号" required />
+          <input name="relationship" placeholder="关系（女儿/儿子）" />
+          <button type="submit">添加联系人</button>
+        </form>
+        <ul id="careList"></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>提醒日志</h2>
+      <button id="requestNotify">开启浏览器通知权限</button>
+      <ul id="noticeList"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
